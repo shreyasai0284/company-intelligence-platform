@@ -1,0 +1,10 @@
+﻿.tmp-*
+.vscode/
+__pycache__/
+*.pyc
+node_modules/
+dist/
+cdk.out/
+build/
+company_intelligence_platform.egg-info/
+*.zip

@@ -1,0 +1,14 @@
+pydantic>=2.6.0
+langgraph>=0.2.0
+langchain-core>=0.2.0
+opensearch-py>=2.4.0
+python-dotenv>=1.0.1
+langchain-mcp-adapters>=0.3.0
+mcp>=1.10.1,<1.28.0
+bedrock-agentcore==1.6.3
+aws-opentelemetry-distro==0.18.0
+requests>=2.32.0
+fastapi>=0.115.0
+uvicorn>=0.30.0
+yfinance>=0.2.54
+tavily-python>=0.5.0

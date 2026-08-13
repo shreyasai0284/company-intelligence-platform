@@ -1,0 +1,47 @@
+{
+  "CallerReference": "demo-frontend-20260811-2",
+  "Comment": "Frontend demo distribution for CIP",
+  "Enabled": true,
+  "PriceClass": "PriceClass_100",
+  "IsIPV6Enabled": true,
+  "Origins": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "Id": "S3FrontendOrigin",
+        "DomainName": "cip-frontend-704134886191-ap-south-1.s3-website.ap-south-1.amazonaws.com",
+        "CustomOriginConfig": {
+          "HTTPPort": 80,
+          "HTTPSPort": 443,
+          "OriginProtocolPolicy": "http-only",
+          "OriginSslProtocols": {
+            "Quantity": 1,
+            "Items": ["TLSv1.2"]
+          }
+        }
+      }
+    ]
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "S3FrontendOrigin",
+    "ViewerProtocolPolicy": "redirect-to-https",
+    "AllowedMethods": {
+      "Quantity": 2,
+      "Items": ["GET", "HEAD"]
+    },
+    "ForwardedValues": {
+      "QueryString": false,
+      "Cookies": {
+        "Forward": "none"
+      }
+    },
+    "MinTTL": 0,
+    "DefaultTTL": 86400,
+    "MaxTTL": 31536000,
+    "Compress": true
+  },
+  "DefaultRootObject": "index.html",
+  "ViewerCertificate": {
+    "CloudFrontDefaultCertificate": true
+  }
+}

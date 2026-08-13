@@ -1,0 +1,19 @@
+services:
+  backend:
+    env_file:
+      - ./agentcore/.env.local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cip-backend
+    working_dir: /app
+    ports:
+      - "8000:8000"
+    environment:
+      PYTHONPATH: /app
+      REPORTS_DIR: /app/reports
+      AWS_REGION: ${AWS_REGION:-us-east-1}
+      AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION:-us-east-1}
+    volumes:
+      - .:/app
+    command: python local_backend.py
